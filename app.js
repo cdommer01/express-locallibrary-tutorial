@@ -11,7 +11,7 @@ const helmet = require("helmet");
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const dev_db_url = "mongodb+srv://cdommer01:123abc@assignment9.xwumjyh.mongodb.net/local_library?retryWrites=true&w=majority";
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = dev_db_url;
 main().catch((err) => console.log(err));
 async function main(){
   await mongoose.connect(mongoDB);
