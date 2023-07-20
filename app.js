@@ -14,12 +14,7 @@ const dev_db_url = "mongodb+srv://cdommer01:123abc@assignment9.xwumjyh.mongodb.n
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 main().catch((err) => console.log(err));
 async function main(){
-  mongoose.connect(
-    process.env.MONGO_URL,
-    options
-  )
-  .then(()=>console.log('connected'))
-  .catch(e=>console.log(e));
+  await mongoose.connect(mongoDB);
 }
 
 var indexRouter = require('./routes/index');
